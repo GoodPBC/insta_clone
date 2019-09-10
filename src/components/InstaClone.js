@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
+import config from '../config';
 
 export class InstaClone extends Component {
 
@@ -38,26 +39,57 @@ export class InstaClone extends Component {
                 
                 <View style={styles.userBar}>
                 
-                    {/* Split user profile pic and menu into opposite sides  using flexbox*/}
+                    {/* Split user profile pic and ellipsis into opposite sides  using flexbox*/}
+                    
                     {/* User Profile Pic */}
                     <View style={{ flexDirection: 'row', alignItems: 'center'}}>
+
                         <Image 
                             style={styles.profilePic}
                             source={{ uri: "https://lh3.googleusercontent.com/y0nVKF7zEcmIM7mqfTDMLxjYD081q_gcxBTmGyIuC8FZwoDGc3Leto4dmemMG82lSjGt9b46mkmtnz7yEHdjVcVtpA"}}
                         />
-                        <Text style={{marginLeft: 5}}>Native Ogor</Text>
+                        
+                        <Text style={{ marginLeft: 5, fontWeight: "700" }}>RNative Ogor</Text>
+                    
                     </View>
+                    
                     {/* Ellipsis Place holder */}
                     <View>
-                        <Text style={{fontSize: 36, marginTop: 5}}>...</Text>
+                        <Text style={{fontSize: 28}}>...</Text>
                     </View>
+                
                 </View> 
+                
+                {/* Image Feed Picture */}
                 <Image style={{width: this.state.screenWidth, height: this.state.pictureHeight }}
                     source= {{ 
                         uri:  imageUri
                     }}
                 />
 
+                {/* Icon bar container View */}
+                <View style={styles.iconBar}>
+                    
+                    {/* heart Icon */}
+                    <Image
+                        style={styles.icon}
+                        source={ config.images.heartIcon }
+                    />
+
+                    {/* chat Icon */}
+                    <Image
+                        style={styles.icon}
+                        source={ config.images.chatIcon }
+                    />
+
+                    {/* arrow Icon */}
+                    <Image
+                        // array styling to override styl object
+                        style={[styles.icon, { width: 40, height: 40 } ]}
+                        source={ config.images.arrowIcon }
+                    />                    
+                
+                </View>
             </View>
         )
     }
@@ -75,7 +107,7 @@ const styles = StyleSheet.create({
         height: 75,
         paddingTop: 25,
         backgroundColor: "rgb(255,254,255)",
-        borderBottomColor: "rgb(233,233,233)",
+        borderBottomColor: config.stylesConstants.defaultBorderColor,
         borderBottomWidth: StyleSheet.hairlineWidth,
         justifyContent: "center",
         alignItems: "center",
@@ -83,9 +115,9 @@ const styles = StyleSheet.create({
     userBar: {
         flexDirection: 'row',
         width: "100%",
-        height: 75,
+        height: config.stylesConstants.rowHeight,
         backgroundColor: "rgb(255,255,255)",
-        paddingHorizontal: 15,
+        paddingHorizontal: 5,
         justifyContent: "space-between",
     },
     text: {
@@ -97,4 +129,19 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 20,
     },
+    iconBar: {
+        height: config.stylesConstants.rowHeight,
+        width: '100%',
+        borderColor: config.stylesConstants.defaultBorderColor,        
+        borderTopWidth: StyleSheet.hairlineWidth,
+        borderBottomWidth: StyleSheet.hairlineWidth,
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    },
+    icon: {
+        width: 30,
+        height: 30,
+        marginHorizontal: 10,
+    }
   });
