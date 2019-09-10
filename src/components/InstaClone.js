@@ -136,7 +136,6 @@ const styles = StyleSheet.create({
         borderTopWidth: StyleSheet.hairlineWidth,
         borderBottomWidth: StyleSheet.hairlineWidth,
         flexDirection: 'row',
-        justifyContent: 'flex-start',
         alignItems: 'center',
     },
     icon: {
