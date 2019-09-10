@@ -9,7 +9,16 @@ export class InstaClone extends Component {
         this.state = {
             screenWidth: 0,
             pictureHeight: 0,
+            liked: false,
         };
+    }
+
+    likeToggler() {
+        this.setState({
+            // shebang toggles like method
+            liked: !this.state.liked
+        })
+        console.log("Picture is Liked:", this.state.liked);
     }
 
     // Server side image cropping im lifecycle method
@@ -29,6 +38,9 @@ export class InstaClone extends Component {
     render() {
 
         const imageUri = "https://lh3.googleusercontent.com/RK1yxVSm8gQmpP8uZ1OxMqtWw4V1S_REoXhzAqOtgPF9N6eSmHr-VPWniq_8TZ1yGdjk22Y5H9-DXbqO8l_LZVSlqyw"
+        
+        // Attach icon color to likeToggler in state using ternary. true(?) == rgb(237,73,86) || false(:) == null
+        const likeIconColor = (this.state.liked) ? "rgb(237,73,86)" : null
         
         return (
             <View style={styles.container}>
@@ -62,7 +74,8 @@ export class InstaClone extends Component {
                 
 
                 <TouchableOpacity onPress={() => {
-                    console.log("A Picture has been pressed!");
+                    console.log("A Picture has been pressed! likeToggler() function has been called");
+                    this.likeToggler();
                     
                 }}>
                 
@@ -79,7 +92,7 @@ export class InstaClone extends Component {
                     
                     {/* heart Icon */}
                     <Image
-                        style={[ styles.icon, {tintColor: "rgb(237,73,86)"} ]}
+                        style={[ styles.icon, {tintColor: likeIconColor } ]}
                         source={ config.images.heartIcon }
                     />
 
@@ -91,7 +104,7 @@ export class InstaClone extends Component {
 
                     {/* arrow Icon */}
                     <Image
-                        // array styling to override styl object
+                        // array styling to override style object
                         style={[styles.icon, { width: 40, height: 40 } ]}
                         source={ config.images.arrowIcon }
                     />                    
