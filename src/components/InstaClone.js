@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Dimensions, Image, StyleSheet, Text, View } from 'react-native'
+import { Dimensions, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import config from '../config';
 
 export class InstaClone extends Component {
@@ -60,19 +60,26 @@ export class InstaClone extends Component {
                 
                 </View> 
                 
-                {/* Image Feed Picture */}
-                <Image style={{width: this.state.screenWidth, height: this.state.pictureHeight }}
-                    source= {{ 
-                        uri:  imageUri
-                    }}
-                />
 
+                <TouchableOpacity onPress={() => {
+                    console.log("A Picture has been pressed!");
+                    
+                }}>
+                
+                    {/* Image Feed Picture */}
+                    <Image style={{width: this.state.screenWidth, height: this.state.pictureHeight }}
+                        source= {{ 
+                            uri:  imageUri
+                        }}
+                    />
+                </TouchableOpacity>
+                
                 {/* Icon bar container View */}
                 <View style={styles.iconBar}>
                     
                     {/* heart Icon */}
                     <Image
-                        style={styles.icon}
+                        style={[ styles.icon, {tintColor: "rgb(237,73,86)"} ]}
                         source={ config.images.heartIcon }
                     />
 
