@@ -73,9 +73,11 @@ export class InstaClone extends Component {
                 </View> 
                 
 
-                <TouchableOpacity onPress={() => {
-                    console.log("A Picture has been pressed! likeToggler() function has been called");
-                    this.likeToggler();
+                <TouchableOpacity 
+                    activeOpacity={.9}
+                    onPress={() => {
+                        console.log("A Picture has been pressed! likeToggler() function has been called");
+                        this.likeToggler();
                     
                 }}>
                 
@@ -163,4 +165,4 @@ const styles = StyleSheet.create({
         height: 30,
         marginHorizontal: 10,
     }
-  });
+});
