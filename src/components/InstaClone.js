@@ -20,12 +20,15 @@ export class InstaClone extends Component {
             screenWidth: Dimensions.get('window').width,
             pictureHeight: (Dimensions.get('window').height) / 2,
         });
-        console.log("Device Screen Height:", (Dimensions.get("window").height) / 2);
+        console.log("Picture Height:", (Dimensions.get("window").height) / 2);
         
     }
 
     // component renderer
     render() {
+
+        const imageUri = "https://lh3.googleusercontent.com/RK1yxVSm8gQmpP8uZ1OxMqtWw4V1S_REoXhzAqOtgPF9N6eSmHr-VPWniq_8TZ1yGdjk22Y5H9-DXbqO8l_LZVSlqyw"
+        
         return (
             <View style={styles.container}>
                 {/* Navbar Container - NavBar Placeholder */}
@@ -51,7 +54,7 @@ export class InstaClone extends Component {
                 </View> 
                 <Image style={{width: this.state.screenWidth, height: this.state.pictureHeight }}
                     source= {{ 
-                        uri:  "https://lh3.googleusercontent.com/RK1yxVSm8gQmpP8uZ1OxMqtWw4V1S_REoXhzAqOtgPF9N6eSmHr-VPWniq_8TZ1yGdjk22Y5H9-DXbqO8l_LZVSlqyw"
+                        uri:  imageUri
                     }}
                 />
 
@@ -71,7 +74,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 75,
         paddingTop: 25,
-        backgroundColor: "rgb(250,250,150)",
+        backgroundColor: "rgb(255,254,255)",
         borderBottomColor: "rgb(233,233,233)",
         borderBottomWidth: StyleSheet.hairlineWidth,
         justifyContent: "center",
