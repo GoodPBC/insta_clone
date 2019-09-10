@@ -1,0 +1,3 @@
+rootProject.name = 'ig_clone'
+
+include ':app'
