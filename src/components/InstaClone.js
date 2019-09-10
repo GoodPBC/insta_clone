@@ -112,6 +112,15 @@ export class InstaClone extends Component {
                     />                    
                 
                 </View>
+
+                {/* Bottom Bar View */}
+                <View style={styles.commentBar}>
+                    <Image
+                        style={[ styles.icon, { height: 20, width: 20 } ]}
+                        source={ config.images.heartIcon }
+                    />
+                    <Text>128 Likes</Text>
+                </View>
             </View>
         )
     }
@@ -164,5 +173,14 @@ const styles = StyleSheet.create({
         width: 30,
         height: 30,
         marginHorizontal: 10,
+    },
+    commentBar: {
+        width: '100%',
+        height: config.stylesConstants.rowHeight,
+        borderColor: config.stylesConstants.defaultBorderColor,        
+        borderTopWidth: StyleSheet.hairlineWidth,
+        borderBottomWidth: StyleSheet.hairlineWidth,  
+        flexDirection: 'row',
+        alignItems: 'center',              
     }
 });
