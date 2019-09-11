@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import { StyleSheet, View} from 'react-native';
 import { InstaClone } from './src/components/InstaClone.js'
+import config from './src/config/index.js';
 
 export default class App extends Component {
   render() {
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: config.stylesConstants.backgroundColor,
   },
   welcome: {
     fontSize: 20,

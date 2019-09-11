@@ -7,6 +7,8 @@ export default {
     },
     stylesConstants: {
         rowHeight: 50,
-        defaultBorderColor: "rgb(200,200,200)",
+        defaultBorderColor: "rgb(155,155,155)",
+        backgroundColor: "rgb(255,254,255)",
+        borderBottomColor: "rgb(155,155,155)",
     }
 };

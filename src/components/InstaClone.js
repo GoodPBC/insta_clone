@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View } from 'react-native';
 import { Post } from '../components/presentation/index';
+import { PostFeed } from '../components/container/index';
 import config from '../config';
 
 export class InstaClone extends Component {
@@ -10,11 +11,14 @@ export class InstaClone extends Component {
         
         return (
             <View style={styles.container}>
+                
                 {/* Navbar Container - NavBar Placeholder */}
                 <View style={styles.tempNav}>
                     <Text>INSTAGRAM</Text>
                 </View>
-                <Post />
+
+                {/* PostFeed -  */}
+                <PostFeed />
             </View>
         )
     }
@@ -31,7 +35,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: 75,
         paddingTop: 25,
-        backgroundColor: "rgb(255,254,255)",
+        backgroundColor: config.stylesConstants.backgroundColor,
         borderBottomColor: config.stylesConstants.defaultBorderColor,
         borderBottomWidth: StyleSheet.hairlineWidth,
         justifyContent: "center",
